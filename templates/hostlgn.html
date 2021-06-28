@@ -1,0 +1,58 @@
+<style>
+    input{
+        width:6cm;
+        border:solid black 1px;
+        height:7mm;
+    }
+    h{
+        color:red;
+        font-size:18;
+    }
+    #submit{
+        width:4cm;
+        border:none;
+        font-size: 24;
+        font-weight: bold;
+        margin-left:9.2cm;
+        height:1cm;
+        color:orangered;
+        background-color: white;
+        font-family:Arial, Helvetica, sans-serif;
+    }
+    #submit:hover{
+        color:blue;
+    }
+    a:hover{
+        color:blue;
+    }
+    a{
+        text-decoration: none;
+        color:orangered;
+        font-size:24;
+        font-weight: bold;
+        margin-left:14cm;
+        font-family:Arial, Helvetica, sans-serif ;
+
+    }
+    h1{
+        font-family: arial;
+    }
+</style>
+<center>
+    <br><br><h1>Login into your Account</h1><br>
+    {% for m in messages %}
+    <h>{{m}}</h>
+    {% endfor %}
+</center><br>
+<form action="hostlgn" method="post">
+    {% csrf_token %}
+    <center>
+    <label>Enter hostname :</label><br>
+    <input type="text"  name="hostname"/><br/><br/>
+    <label>Enter password :</label><br>
+    <input type="password"  name="pass"/><br/><br/>
+    </center><br><br><br><br>
+    <a href="home">Back</a>
+    <input type="submit" value="Login" id="submit"/>
+</form>
+

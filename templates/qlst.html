@@ -1,0 +1,22 @@
+<style>
+    h{
+        font-weight: bold;
+    }
+    #div{
+        margin-left:14mm;
+        font-size:24;
+        font-family: arial;
+    }
+</style>
+<div id="div"><br><br>
+<center><h1>Hii <b>{{hostname}}</b>, Welcome</h1></center>
+Total Number of questions : {{n}}<br><br>
+{% for q in que %}
+<h>{{ forloop.counter }}. {{q.question}}</h><br><br>
+&nbsp;&nbsp;a) {{q.option1}}<br>
+&nbsp;&nbsp;b) {{q.option2}}<br>
+&nbsp;&nbsp;c) {{q.option3}}<br>
+&nbsp;&nbsp;d) {{q.option4}}<br><br>
+&nbsp;&nbsp;Right option : {{q.rightoption}}<br><br>
+{% endfor %}
+</div>

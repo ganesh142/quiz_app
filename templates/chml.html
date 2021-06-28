@@ -1,0 +1,58 @@
+<style>
+    input{
+       width:6cm;
+       border:solid black 1px;
+       height:7mm;
+   }
+   h{
+       color:red;
+       font-size:18;
+   }
+   #submit{
+       width:4cm;
+       border:none;
+       font-size: 24;
+       font-weight: bold;
+       margin-left:9.2cm;
+       height:1cm;
+       color:orangered;
+       background-color: white;
+       font-family:Arial, Helvetica, sans-serif;
+   }
+   #submit:hover{
+       color:blue;
+   }
+   a:hover{
+       color:blue;
+   }
+   a{
+       text-decoration: none;
+       color:orangered;
+       font-size:24;
+       font-weight: bold;
+       margin-left:14cm;
+       font-family:Arial, Helvetica, sans-serif ;
+
+   }
+   h1{
+       font-family: arial;
+   }
+</style>
+<center><br><br>
+<h1>Hii <b>{{hostname}}</b>, Welcome</h1><br>
+{% for m in messages %}
+<h>{{m}}</h>
+{% endfor %}
+</center><br><br>
+<form action="chml" method="post">
+    {% csrf_token %}
+    <center>
+    <label>Enter new HostEmail :</label><br>
+    <input type="text" name="newhostml"/><br><br>
+    <label>Enter your password :</label><br>
+    <input type="password" name="passwd"/><br><br>
+    </center><br><br><br><br>
+    <a href="data">Back</a>
+    <input type="submit" value="change" id="submit"/>
+
+</form>

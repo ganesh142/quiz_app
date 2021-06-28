@@ -1,0 +1,21 @@
+<style>
+    h{
+        font-weight: bold;
+    }
+    #div{
+        margin-left:14mm;
+        font-size:24;
+        font-family: arial;
+    }
+</style>
+<div id="div"><br><br>
+<center><h1>Hii <b>{{hostname}}</b>, Welcome</h1></center>
+Total Number of users : {{num}}<br><br>
+{% for u in user %}
+<h>{{ forloop.counter }}. {{u.username}}</h><br><br>
+&nbsp;&nbsp;&nbsp;EmailId : <b>{{u.useremail}}</b><br>
+&nbsp;&nbsp;&nbsp;Password : <b>{{u.userpass1}}</b><br>
+&nbsp;&nbsp;&nbsp;attempt : <b>{% if u.attempt %} not attempted {% else %} attempted {% endif %}</b><br>
+&nbsp;&nbsp;&nbsp;score : <b>{{u.score}}</b><br><br>
+{% endfor %}
+</div>

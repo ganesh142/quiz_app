@@ -1,0 +1,67 @@
+<style>
+     input{
+        width:6cm;
+        border:solid black 1px;
+        height:7mm;
+    }
+    h{
+        color:red;
+        font-size:18;
+    }
+    #submit{
+        width:4cm;
+        border:none;
+        font-size: 24;
+        font-weight: bold;
+        margin-left:9.2cm;
+        height:1cm;
+        color:orangered;
+        background-color: white;
+        font-family:Arial, Helvetica, sans-serif;
+    }
+    #submit:hover{
+        color:blue;
+    }
+    a:hover{
+        color:blue;
+    }
+    a{
+        text-decoration: none;
+        color:orangered;
+        font-size:24;
+        font-weight: bold;
+        margin-left:14cm;
+        font-family:Arial, Helvetica, sans-serif ;
+
+    }
+    h1{
+        font-family: arial;
+    }
+</style>
+<center>
+    <h1>Hii <b>{{hostname}}</b>, Welcome</h1><br>
+    {% for m in messages %}
+    <h>{{m}}</h>
+    {% endfor %}
+</center><br><br>
+<form action="addqn" method="post">
+    {% csrf_token %}
+    <center>
+    <label>Enter Question :</label><br>
+    <input type="text"  name="question"/><br><br>
+    <label>Enter option1 :</label><br>
+    <input type="text"  name="option1" /><br><br>
+    <label>Enter option2 :</label><br>
+    <input type="text"  name="option2" /><br><br>
+    <label>Enter option3 :</label><br>
+    <input type="text"  name="option3" /><br><br>
+    <label>Enter option4 :</label><br>
+    <input type="text"  name="option4" /><br><br>
+    <label>Enter right option :</label><br>
+    <input type="text"  name="right" /><br><br>
+    </center>
+    <br><br><br><br>
+    <a href="data">Back</a>
+    <input type="submit" value="add" id="submit"/>
+
+</form>

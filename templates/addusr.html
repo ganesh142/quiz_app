@@ -1,0 +1,64 @@
+<style>
+    input{
+       width:6cm;
+       border:solid black 1px;
+       height:7mm;
+   }
+   h{
+       color:red;
+       font-size:18;
+   }
+   #submit{
+       width:4cm;
+       border:none;
+       font-size: 24;
+       font-weight: bold;
+       margin-left:9.2cm;
+       height:1cm;
+       color:orangered;
+       background-color: white;
+       font-family:Arial, Helvetica, sans-serif;
+   }
+   #submit:hover{
+       color:blue;
+   }
+   a:hover{
+       color:blue;
+   }
+   a{
+       text-decoration: none;
+       color:orangered;
+       font-size:24;
+       font-weight: bold;
+       margin-left:14cm;
+       font-family:Arial, Helvetica, sans-serif ;
+
+   }
+   h1{
+       font-family: arial;
+   }
+</style>
+<center>
+    <br><br>
+    <h1>Hii <b>{{hostname}}</b>, Welcome</h1><br>
+    {% for m in messages %}
+    <h>{{m}}</h>
+    {% endfor %}
+</center><br>
+<form action="addusr" method="post">
+    {% csrf_token %}
+    <center>
+    <label>Enter username :</label><br>
+    <input type="text"  name="username"/><br><br>
+    <label>Enter EmailId :</label><br>
+    <input type="email" name="useremail" /><br><br>
+    <label>Enter password:</label><br>
+    <input type="password" name="pass1" /><br><br>
+    <label>Confirm password :</label><br>
+    <input type="password"  name="pass2" /><br><br>
+    </center><br><br><br>
+    <a href="data">Back</a>
+    <input type="submit" value="add" id="submit"/>
+
+</form>
+
